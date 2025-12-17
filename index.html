@@ -71,13 +71,36 @@ h2 {
     text-align: center;
 }
 
-/* PROCESS BOX */
+/* PROCESS */
 .process {
     background: #fff7ed;
     border-left: 6px solid #f59e0b;
     padding: 18px;
     border-radius: 10px;
-    font-size: 15px;
+}
+
+/* STATUS BAR */
+.progress {
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 16px;
+    margin: 12px 0;
+}
+
+.progress-bar {
+    width: 85%;
+    height: 100%;
+    background: linear-gradient(90deg,#22c55e,#16a34a);
+}
+
+/* CERTIFICATE */
+.certificate {
+    border: 3px dashed gold;
+    padding: 25px;
+    text-align: center;
+    border-radius: 14px;
+    background: #fffbeb;
 }
 
 /* IMAGES */
@@ -196,9 +219,15 @@ footer {
     <div class="process">
         <p>
             The winning amount of <strong>KSh 245,000</strong> is currently
-            <strong>IN PROCESS</strong>.  
-            All required personal details have been successfully submitted
-            and are under system verification.
+            <strong>IN PROCESS</strong> and undergoing final system checks.
+        </p>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <p>
+            Status: <strong>Final Verification Stage</strong>
         </p>
     </div>
 </section>
@@ -207,21 +236,32 @@ footer {
     <h2>Final Verification Notice</h2>
     <div class="process">
         <p>
-            <strong>IMPORTANT:</strong><br>
-            A final system verification step is pending before funds release.
-            This step is part of standard compliance and security procedures.
+            As part of standard compliance and security procedures,
+            a final system verification step is required before funds release.
         </p>
 
         <p>
-            No payment instructions are displayed on this website.
-            All official communication regarding verification is handled
-            privately through authorized support channels only.
+            <strong>Important:</strong><br>
+            No payment instructions, recipient details, or amounts
+            are displayed or collected on this website.
         </p>
 
         <p>
-            Once verification is completed, the winning amount will be
-            released according to system processing timelines.
+            Any official coordination related to verification is handled
+            privately through authorized channels only.
         </p>
+    </div>
+</section>
+
+<section>
+    <h2>Official Winner Certificate</h2>
+    <div class="certificate">
+        <h3>Certificate of Achievement</h3>
+        <p>This certifies that</p>
+        <h2>James Mwangi</h2>
+        <p>has been verified as an official winner</p>
+        <p><strong>Amount:</strong> KSh 245,000</p>
+        <p>Year: 2025</p>
     </div>
 </section>
 
