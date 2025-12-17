@@ -41,6 +41,17 @@ header img {
     font-weight: bold;
 }
 
+/* CLOCK */
+.clock {
+    margin-top: 15px;
+    background: #020617;
+    color: #22c55e;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
 /* LIVE STATUS */
 .live-status {
     background: #ecfdf5;
@@ -56,6 +67,17 @@ header img {
     0% { opacity: 1; }
     50% { opacity: .6; }
     100% { opacity: 1; }
+}
+
+/* SERVER LOGS */
+.logs {
+    background: #020617;
+    color: #e5e7eb;
+    font-family: monospace;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 /* SECTIONS */
@@ -155,6 +177,20 @@ h2 {
     border-radius: 6px;
 }
 
+/* WINNERS */
+.winners {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+}
+
+.winner-card {
+    background: #f8fafc;
+    border-left: 5px solid gold;
+    padding: 15px;
+    border-radius: 10px;
+}
+
 /* TRUST */
 .trust {
     background: #f0fdf4;
@@ -215,7 +251,6 @@ footer {
 
 <body>
 
-<!-- BACKGROUND AUDIO -->
 <div class="audio-box">
 <audio autoplay loop controls>
     <source src="background-audio.mp3" type="audio/mpeg">
@@ -228,111 +263,36 @@ footer {
     <p>Kenya | Elite Verified Winner</p>
     <div class="badge">🏆 ELITE VERIFIED</div>
 
+    <div class="clock" id="clock">SERVER TIME</div>
+
     <div class="live-status" id="liveStatus">
         🔴 Live Status: Initializing system verification...
     </div>
 </header>
 
 <section>
-    <h2>Achievement Overview</h2>
-    <div class="stats">
-        <div class="stat">
-            <h3>KSh 245,000</h3>
-            <p>Total Won</p>
-        </div>
-        <div class="stat">
-            <h3>100%</h3>
-            <p>Verified</p>
-        </div>
-        <div class="stat">
-            <h3>2025</h3>
-            <p>Winning Year</p>
-        </div>
-    </div>
+<h2>System Activity Logs</h2>
+<div class="logs" id="logs"></div>
 </section>
 
 <section>
-    <h2>Payment Status – In Process</h2>
-    <div class="process">
-        <p>
-            The winning amount of <strong>KSh 245,000</strong> is currently
-            <strong>IN PROCESS</strong> and undergoing final system checks.
-        </p>
-
-        <div class="progress">
-            <div class="progress-bar"></div>
-        </div>
-
-        <p>Status: <strong>Final Verification Stage</strong></p>
-    </div>
-</section>
-
-<section>
-    <h2>Final Verification Notice</h2>
-    <div class="process">
-        <p>
-            As part of standard compliance and security procedures,
-            a final system verification step is required before funds release.
-        </p>
-        <p>
-            <strong>Important:</strong> No payment details are displayed or collected on this website.
-        </p>
-        <p>
-            Any official coordination is handled privately through authorized channels only.
-        </p>
-    </div>
-</section>
-
-<section>
-    <h2>Official Winner Certificate</h2>
-    <div class="certificate">
-        <h3>Certificate of Achievement</h3>
-        <p>This certifies that</p>
-        <h2>James Mwangi</h2>
-        <p>has been verified as an official winner</p>
-        <p><strong>Amount:</strong> KSh 245,000</p>
-        <p>Year: 2025</p>
-    </div>
-</section>
-
-<section>
-    <h2>Identity Verification</h2>
-    <p>Click any image to view full size.</p>
-
-    <div class="image-grid">
-        <div class="image-card">
-            <img src="james-id-front.jpg" onclick="openModal(this.src)">
-            <div class="mask">ID Number Hidden</div>
-            <p>National ID – Front</p>
-        </div>
-
-        <div class="image-card">
-            <img src="james-id-back.jpg" onclick="openModal(this.src)">
-            <div class="mask">Sensitive Area Protected</div>
-            <p>National ID – Back</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>Trust & Transparency</h2>
-    <div class="trust">
-        ✅ Real Kenyan Winner<br>
-        ✅ Verified Identity<br>
-        ✅ Secure & Transparent Process
-    </div>
+<h2>Multiple Verified Winners</h2>
+<div class="winners">
+    <div class="winner-card">🏆 James Mwangi – KSh 245,000</div>
+    <div class="winner-card">🏆 Brian Otieno – KSh 180,000</div>
+    <div class="winner-card">🏆 David Kamau – KSh 150,000</div>
+    <div class="winner-card">🏆 Peter Mwangi – KSh 210,000</div>
+</div>
 </section>
 
 <footer>
-    © 2025 | James Mwangi Elite Winner | GitHub Pages
+© 2025 | James Mwangi Elite Winner | GitHub Pages
 </footer>
 
-<a class="whatsapp" href="https://wa.me/254711949099" target="_blank">
-    WhatsApp Contact
-</a>
+<a class="whatsapp" href="https://wa.me/254711949099" target="_blank">WhatsApp Contact</a>
 
 <div class="modal" id="modal" onclick="this.style.display='none'">
-    <img id="modalImg">
+<img id="modalImg">
 </div>
 
 <script>
@@ -341,19 +301,40 @@ function openModal(src) {
     document.getElementById("modal").style.display = "flex";
 }
 
-/* LIVE STATUS UPDATES */
+/* CLOCK */
+setInterval(() => {
+    document.getElementById("clock").textContent =
+    "SERVER TIME: " + new Date().toLocaleString();
+}, 1000);
+
+/* LIVE STATUS */
 const statuses = [
     "🔴 Live Status: Verifying identity records...",
     "🟡 Live Status: Processing compliance checks...",
     "🟢 Live Status: Verification almost complete...",
     "🔵 Live Status: Awaiting final system confirmation..."
 ];
-
-let index = 0;
+let s = 0;
 setInterval(() => {
-    document.getElementById("liveStatus").textContent = statuses[index];
-    index = (index + 1) % statuses.length;
+    document.getElementById("liveStatus").textContent = statuses[s];
+    s = (s + 1) % statuses.length;
 }, 5000);
+
+/* LOGS */
+const logs = [
+    "Connecting to verification node...",
+    "Identity hash validated",
+    "Compliance layer synced",
+    "Security token issued",
+    "Awaiting final confirmation"
+];
+let l = 0;
+setInterval(() => {
+    const logBox = document.getElementById("logs");
+    logBox.innerHTML += "> " + logs[l] + "<br>";
+    logBox.scrollTop = logBox.scrollHeight;
+    l = (l + 1) % logs.length;
+}, 4000);
 </script>
 
 </body>
