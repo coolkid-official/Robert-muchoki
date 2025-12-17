@@ -15,6 +15,35 @@ body {
     color: #333;
 }
 
+/* SPLASH */
+#splash {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#splash img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    margin-bottom: 15px;
+}
+
+#splash h1 {
+    margin: 0;
+}
+
+#splash p {
+    opacity: .8;
+}
+
 /* HERO */
 header {
     background: linear-gradient(135deg, #0f172a, #1f2933);
@@ -43,11 +72,11 @@ header img {
 
 /* CLOCK */
 .clock {
-    margin-top: 15px;
+    margin-top: 12px;
     background: #020617;
     color: #22c55e;
     font-family: monospace;
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 8px;
     display: inline-block;
 }
@@ -67,17 +96,6 @@ header img {
     0% { opacity: 1; }
     50% { opacity: .6; }
     100% { opacity: 1; }
-}
-
-/* SERVER LOGS */
-.logs {
-    background: #020617;
-    color: #e5e7eb;
-    font-family: monospace;
-    padding: 15px;
-    border-radius: 10px;
-    max-height: 200px;
-    overflow-y: auto;
 }
 
 /* SECTIONS */
@@ -177,6 +195,17 @@ h2 {
     border-radius: 6px;
 }
 
+/* LOGS */
+.logs {
+    background: #020617;
+    color: #e5e7eb;
+    font-family: monospace;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 /* WINNERS */
 .winners {
     display: grid;
@@ -251,6 +280,14 @@ footer {
 
 <body>
 
+<!-- SPLASH SCREEN -->
+<div id="splash">
+    <img src="james-standing.jpg">
+    <h1>James Mwangi</h1>
+    <p>Loading verification details…</p>
+</div>
+
+<!-- AUDIO -->
 <div class="audio-box">
 <audio autoplay loop controls>
     <source src="background-audio.mp3" type="audio/mpeg">
@@ -262,12 +299,8 @@ footer {
     <h1>James Mwangi 🇰🇪</h1>
     <p>Kenya | Elite Verified Winner</p>
     <div class="badge">🏆 ELITE VERIFIED</div>
-
-    <div class="clock" id="clock">SERVER TIME</div>
-
-    <div class="live-status" id="liveStatus">
-        🔴 Live Status: Initializing system verification...
-    </div>
+    <div class="clock" id="clock"></div>
+    <div class="live-status" id="liveStatus">🔴 Live Status: Initializing system verification...</div>
 </header>
 
 <section>
@@ -281,7 +314,6 @@ footer {
     <div class="winner-card">🏆 James Mwangi – KSh 245,000</div>
     <div class="winner-card">🏆 Brian Otieno – KSh 180,000</div>
     <div class="winner-card">🏆 David Kamau – KSh 150,000</div>
-    <div class="winner-card">🏆 Peter Mwangi – KSh 210,000</div>
 </div>
 </section>
 
@@ -291,15 +323,11 @@ footer {
 
 <a class="whatsapp" href="https://wa.me/254711949099" target="_blank">WhatsApp Contact</a>
 
-<div class="modal" id="modal" onclick="this.style.display='none'">
-<img id="modalImg">
-</div>
-
 <script>
-function openModal(src) {
-    document.getElementById("modalImg").src = src;
-    document.getElementById("modal").style.display = "flex";
-}
+/* SPLASH */
+setTimeout(() => {
+    document.getElementById("splash").style.display = "none";
+}, 1000);
 
 /* CLOCK */
 setInterval(() => {
@@ -330,9 +358,9 @@ const logs = [
 ];
 let l = 0;
 setInterval(() => {
-    const logBox = document.getElementById("logs");
-    logBox.innerHTML += "> " + logs[l] + "<br>";
-    logBox.scrollTop = logBox.scrollHeight;
+    const box = document.getElementById("logs");
+    box.innerHTML += "> " + logs[l] + "<br>";
+    box.scrollTop = box.scrollHeight;
     l = (l + 1) % logs.length;
 }, 4000);
 </script>
