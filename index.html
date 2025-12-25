@@ -15,6 +15,7 @@ body {
     color: #333;
 }
 
+/* HERO */
 header {
     background: linear-gradient(135deg, #0f172a, #1f2933);
     color: #fff;
@@ -40,6 +41,7 @@ header img {
     font-weight: bold;
 }
 
+/* SECTIONS */
 section {
     max-width: 950px;
     margin: 30px auto;
@@ -54,6 +56,7 @@ h2 {
     padding-bottom: 8px;
 }
 
+/* STATS */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -68,6 +71,7 @@ h2 {
     text-align: center;
 }
 
+/* PROCESS */
 .process {
     background: #fff7ed;
     border-left: 6px solid #f59e0b;
@@ -75,6 +79,7 @@ h2 {
     border-radius: 10px;
 }
 
+/* STATUS BAR */
 .progress {
     background: #e5e7eb;
     border-radius: 20px;
@@ -89,6 +94,7 @@ h2 {
     background: linear-gradient(90deg,#22c55e,#16a34a);
 }
 
+/* CERTIFICATE */
 .certificate {
     border: 3px dashed gold;
     padding: 25px;
@@ -97,6 +103,7 @@ h2 {
     background: #fffbeb;
 }
 
+/* IMAGES */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -116,6 +123,7 @@ h2 {
     border: 1px solid #ddd;
 }
 
+/* ID MASK */
 .mask {
     position: absolute;
     bottom: 15px;
@@ -131,6 +139,7 @@ h2 {
     border-radius: 6px;
 }
 
+/* TRUST */
 .trust {
     background: #f0fdf4;
     border-left: 6px solid gold;
@@ -138,6 +147,7 @@ h2 {
     border-radius: 10px;
 }
 
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -154,6 +164,7 @@ h2 {
     border-radius: 12px;
 }
 
+/* WHATSAPP */
 .whatsapp {
     position: fixed;
     right: 20px;
@@ -166,6 +177,7 @@ h2 {
     font-weight: bold;
 }
 
+/* FOOTER */
 footer {
     background: #e5e7eb;
     text-align: center;
@@ -178,7 +190,7 @@ footer {
 <body>
 
 <header>
-    <img src="images/james-standing.jpg">
+    <img src="james-standing.jpg">
     <h1>James Mwangi 🇰🇪</h1>
     <p>Kenya | Elite Verified Winner</p>
     <div class="badge">🏆 ELITE VERIFIED</div>
@@ -187,35 +199,117 @@ footer {
 <section>
     <h2>Achievement Overview</h2>
     <div class="stats">
-        <div class="stat"><h3>KSh 245,000</h3><p>Total Won</p></div>
-        <div class="stat"><h3>100%</h3><p>Verified</p></div>
-        <div class="stat"><h3>2025</h3><p>Winning Year</p></div>
+        <div class="stat">
+            <h3>KSh 245,000</h3>
+            <p>Total Won</p>
+        </div>
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Verified</p>
+        </div>
+        <div class="stat">
+            <h3>2025</h3>
+            <p>Winning Year</p>
+        </div>
     </div>
 </section>
 
 <section>
-    <h2>Successful Payouts – Confirmed Winners</h2>
+    <h2>Payment Status – In Process</h2>
+    <div class="process">
+        <p>
+            The winning amount of <strong>KSh 245,000</strong> is currently
+            <strong>IN PROCESS</strong> and undergoing final system checks.
+        </p>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <p>
+            Status: <strong>Final Verification Stage</strong>
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Final Verification Notice</h2>
+    <div class="process">
+        <p>
+            As part of standard compliance and security procedures,
+            a final system verification step is required before funds release.
+        </p>
+
+        <p>
+            <strong>Important:</strong><br>
+            No payment instructions, recipient details, or amounts
+            are displayed or collected on this website.
+        </p>
+
+        <p>
+            Any official coordination related to verification is handled
+            privately through authorized channels only.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Official Winner Certificate</h2>
+    <div class="certificate">
+        <h3>Certificate of Achievement</h3>
+        <p>This certifies that</p>
+        <h2>James Mwangi</h2>
+        <p>has been verified as an official winner</p>
+        <p><strong>Amount:</strong> KSh 245,000</p>
+        <p>Year: 2025</p>
+    </div>
+</section>
+
+<section>
+    <h2>Identity Verification</h2>
+    <p>Click any image to view full size.</p>
+
     <div class="image-grid">
         <div class="image-card">
-            <img src="images/winner-lady-1.jpg" onclick="openModal(this.src)">
+            <img src="james-id-front.jpg" onclick="openModal(this.src)">
+            <div class="mask">ID Number Hidden</div>
+            <p>National ID – Front</p>
+        </div>
+
+        <div class="image-card">
+            <img src="james-id-back.jpg" onclick="openModal(this.src)">
+            <div class="mask">Sensitive Area Protected</div>
+            <p>National ID – Back</p>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ NEW SECTION ADDED (NOTHING REMOVED) -->
+<section>
+    <h2>Successful Payouts – Confirmed Winners</h2>
+    <p>Below are verified winners who have already received their payments.</p>
+
+    <div class="image-grid">
+        <div class="image-card">
+            <img src="winner-lady-1.jpg" onclick="openModal(this.src)">
             <div class="mask">Payment Completed</div>
             <p>Mary A. – KSh 180,000</p>
         </div>
 
         <div class="image-card">
-            <img src="images/winner-lady-2.jpg" onclick="openModal(this.src)">
+            <img src="winner-lady-2.jpg" onclick="openModal(this.src)">
             <div class="mask">Funds Received</div>
             <p>Grace W. – KSh 210,000</p>
         </div>
 
         <div class="image-card">
-            <img src="images/winner-man-1.jpg" onclick="openModal(this.src)">
+            <img src="winner-man-1.jpg" onclick="openModal(this.src)">
             <div class="mask">Verified Transfer</div>
             <p>Peter K. – KSh 300,000</p>
         </div>
 
         <div class="image-card">
-            <img src="images/winner-man-2.jpg" onclick="openModal(this.src)">
+            <img src="winner-man-2.jpg" onclick="openModal(this.src)">
             <div class="mask">Completed</div>
             <p>Daniel M. – KSh 150,000</p>
         </div>
